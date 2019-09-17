@@ -4,11 +4,11 @@ import EightBall from './EightBall';
 class App extends React.Component {
   render() {
     return (
-      <div>< EightBall /></div>
-
+      <div>
+        <EightBall />
+      </div>
     );
   }
-
 }
 
 export default App;

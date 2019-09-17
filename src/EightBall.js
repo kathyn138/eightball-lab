@@ -39,23 +39,37 @@ class EightBall extends Component {
   }
 
   handleClick(evt) {
-    let randomIndex = this.props.answers[this.getRandom()]
+    let randMsg = this.props.answers[this.getRandom()]
     this.setState({
-      color: randomIndex.color,
-      msg: randomIndex.msg
+      color: randMsg.color,
+      msg: randMsg.msg
     });
   }
+
+  // resetClick(evt) {
+  //   this.setState({
+  //     color: "black",
+  //     msg: "Think of a Question."
+  //   });
+  // }
+
   render() {
     return (
-      <button onClick={this.handleClick} style={{
-        backgroundColor: this.state.color,
-        color: "white",
-        borderRadius: "50%",
-        width: "200px",
-        height: "200px"
-      }}>
-        <span>{this.state.msg}</span>
-      </button>
+      <div>
+        <button onClick={this.handleClick} style={{
+          backgroundColor: this.state.color,
+          //only leave dynamic styles here. move static ones to stylesheet.
+          color: "white",
+          borderRadius: "50%",
+          width: "200px",
+          height: "200px"
+        }}>
+          <span>{this.state.msg}</span>
+        </button>
+        {/* <button onClick={this.resetClick}>
+          Reset
+        </button> */}
+      </div>
     )
   }
 }
